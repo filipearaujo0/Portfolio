@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700;800;900&display=swap');
+
+    /* Configurações Globais */
+    * {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-sizing: border-box;
+    }
+
+    /* Configurações do corpo */
+    body {
+        display: grid;
+        width: 100dvw;
+        height: 100dvh;
+        background-image: url(img/background.png);
+        background-size: cover;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 15% 70% 15%;
+        font-family: 'Gabarito', sans-serif;
+    }
+
+    .container {
+        display: grid;
+    }
+
+    /* Configurações do cabeçalho */
+    header {
+        grid-column-start: 2;
+        grid-row-start: 1;
+        text-align: center;
+    }
+
+    .textoprincipal > h1{
+        margin-bottom: 20px;
+        font-size: 40px;
+        font-weight: 900;
+        background: linear-gradient(to right, rgb(0, 0, 0), transparent);
+        color: white;
+        padding: 5px;
+    }
+
+    /* Configurações do bloco principal do site */
+    main {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        place-items: initial;
+    }
+
+    .projeto1 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        border: 2px solid rgb(145, 144, 144);
+        border-radius: 20px;
+        margin-left: 20%;
+        width: 50%;
+        box-shadow: -2px 4px 20px 0px;
+        filter: blur(5px);
+    }
+
+    .link1 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        color: black;
+    }
+
+    .link1:active {
+        color: rgb(255, 255, 255);
+    }
+
+    .projeto1:hover {
+        transform: scale(1.03);
+        transition: 0.3s;
+        filter: blur(0px);
+    }
+
+    .projeto2 {
+        grid-row-start: 1;
+        grid-row-end: 1;
+        width: 90%;
+        border: 2px solid rgb(145, 144, 144);
+        border-radius: 20px;
+        box-shadow: -2px 4px 20px 0px;
+        filter: blur(5px);
+    }
+
+    .projeto2:hover {
+        transform: scale(1.03);
+        transition: 0.3s;
+        filter: blur(0px);
+    }
+
+    .link2 {
+        color: black;
+    }
+
+    .link2:active {
+        color: rgb(255, 255, 255);
+    }
+
+    .projeto3 {
+        width: 90%;
+        margin-top: 15%;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        border: 2px solid rgb(145, 144, 144);
+        border-radius: 20px;
+        box-shadow: -2px 4px 20px 0px;
+        filter: blur(5px);
+    }
+
+    .projeto3:hover {
+        transform: scale(1.03);
+        transition: 0.3s;
+        filter: blur(0px);
+    }
+
+    .link3 {
+        grid-row-start: 2;
+        grid-row-end: 2;
+        grid-column-start: 2;
+        color: black;
+    }
+
+    .link3:active {
+        color: rgb(255, 255, 255);
+    }
+
+    /* Configurações do MENU */
+    nav {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        place-items: center;
+        background-color: rgb(0, 0, 0);
+        box-shadow: 0px 0px 5px 4px;
+    }
+
+    .imgeu {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        background-color: rgb(255, 255, 255);
+        border-radius: 100%;
+        margin-top: 20px;
+        margin-bottom: -50px;
+    }
+
+    .imgeu:hover{
+        width: 210px;
+        transition-duration: 0.8s;
+    }
+
+    li {
+        background-color: white;
+        padding: 30px;
+        margin: 30px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    li > a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        font-weight: 700;
+        position: relative;
+    }
+    
+    .link:after { /* Configurações que tornam todo bloco do link <a> clicável */
+        content: '';
+        position: absolute;
+        top: -40px;
+        bottom: -40px;
+        left: -40px;
+        right: -40px;
+    }
+
+    /* Configurações de interatividade para os links */
+    .link:active {
+        color: gray;
+    }
+
+    li:hover {
+        color: gray;
+        border: 8px solid gray;
+        transition-duration: 0.3s;
+    }
+
+    /* Daqui ao fim do CSS - Configurações de responsividade para diferentes tamanhos de telas */
+    @media screen and (max-width: 1370px) {
+        .textoprincipal h1{
+            font-size: 24px;
+        }
+
+        .imgeu {
+            width: 150px;
+        }
+
+        nav li{
+            padding: 15px;
+            margin: 30px;
+        }
+
+        .link:after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            bottom: -10px;
+            left: -10px;
+            right: -10px;
+    }
+    }
+
+    @media screen and (max-width: 900px) {
+        body {
+            grid-template-columns: 100%;
+            grid-template-rows: 30% 15% 55%;
+        }
+
+        nav {
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        .imgeu {
+            display: none;
+        }
+
+        nav li{
+            display: inline;
+            padding: 8px;
+            margin: 5px;
+        }
+
+        header {
+            grid-column-start: 1;
+            grid-row-start: 2;
+            grid-row-end: 2;
+            text-align: justify;
+            place-items: initial;
+            margin: 20px 60px 60px 60px;
+        }
+
+        .textoprincipal > h1 {
+            text-align: center;
+        }  
+
+        .projeto1 {
+            filter: none;
+        }
+
+        .projeto2 {
+            filter: none;
+        }
+
+        .projeto3 {
+            filter: none;
+        }
+    }
+
+    @media screen and (max-width: 530px) {
+        body {
+            grid-template-columns: 100%;
+            grid-template-rows: 30% 15% 55%;
+        }
+        
+        nav {
+            display: flex;
+        }
+
+        nav > ul {
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav li{
+            display: inline;
+            padding: 5px;
+            margin: 3px;
+        }
+
+        li > a {
+            font-size: 14px;
+        }
+
+        header {
+            grid-column-start: 1;
+            grid-row-start: 2;
+            text-align: justify;
+            place-items: initial;
+            margin: 20px 60px 60px 60px;
+        }
+
+        .textoprincipal > h1 {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .link:after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            bottom: -5px;
+            left: -5px;
+            right: -5px;
+        }
+    }
+
+    @media screen and (max-width: 390px){
+        nav li {
+            display: inline;
+            padding: 2px;
+            margin: 1px;
+        }
+
+        .link:after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            bottom: -3px;
+            left: -3px;
+            right: -3px;
+     }
+    }
+
+    </style>
+</head>
+<body>
+    <header class="container"> 
+            <div class="textoprincipal">
+                <h1>Portfólio</h1>
+            </div>
+    </header>
+
+    <nav class="container">
+        <a href="pginitial.html" target="_self"><img class="imgeu" src="img/eu.png" alt="imagem Filipe Araujo" width="200px"></a>
+        <ul>
+            <li><a href="pginitial.html" target="_self" class="link">Página Inicial</a></li>
+            <li><a href="form.html" target="_self" class="link">Formação</a></li>
+            <li><a href="sobre.html" target="_self" class="link">Sobre Mim</a></li>
+            <li><a href="cont.html" target="_self" class="link">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <a class="link1" href="https://filipearaujo0.github.io/exploracaoglobal/" target="_blank"><img class="projeto1" src="img/proj1.jpg" alt="Projeto 01"></a>
+
+        <a class="link2" href="https://filipearaujo0.github.io/HTML-CSS/desafios/d010/android.html#" target="_blank"><img class="projeto2" src="img/proj2.PNG" alt="Projeto 02"></a>
+
+        <a class="link3" href="https://filipearaujo0.github.io/calculadorajs/" target="_blank"><img class="projeto3" src="img/proj3.PNG" alt="Projeto 03"></a>
+    </main>
+</body>
+</html>

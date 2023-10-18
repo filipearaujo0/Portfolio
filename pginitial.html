@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Online</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700;800;900&display=swap');
+
+        /* Configurações Globais */
+        * {
+            font-family: 'Gabarito', sans-serif;
+            margin: 0;
+            padding: 0;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        /* Configurações do Corpo */
+        body {
+            display: grid;
+            grid-template-rows: 10% 85% 5%;
+            width: 100dvw;
+            height: 100dvh;
+            background-image: url(img/background.png);
+            background-size: cover;
+        }
+
+        .container {
+            display: grid;
+        }
+
+        /* Configurações do cabeçalho */
+        header {
+            grid-row-start: 1;
+            grid-row-end: 1;
+            background-color: #000000b9;
+            place-items: center;
+            color: white;
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.301);
+            text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.438);
+        }
+
+        /* Configurações do MENU */
+        .menu {
+            grid-row-start: 2;
+            grid-row-end: 2;
+            place-items: center;
+        }
+
+
+        .menu li {
+            display: inline-grid;
+            border: 2px solid rgb(78, 77, 77);
+            padding: 20px;
+            background-color: black;
+            box-shadow: 0px 8px 15px -3px;
+            margin-left: 35px;
+            margin-bottom: 20px;
+        }
+
+        .menu a {
+            font-size: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Configurações do Rodapé */
+        .rodape {
+            background-color: #000000b9;
+            place-items: center;
+            color: white;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.301);
+        }
+
+        /* Configurações de interatividade */
+        .link:hover {
+            background-color: rgb(129, 127, 127);
+            transition-duration: 0.5s;
+        }
+
+        .visit:active {
+            color: black;
+        }
+
+        /* Configurações que tornam todo bloco ao redor do link '<a>' clicável */
+        li > a {
+            position: relative;
+        }
+
+        .visit:after {
+                content: '';
+                position: absolute;
+                top: -20px;
+                bottom: -20px;
+                left: -20px;
+                right: -20px;
+        }
+
+        /* Configurações de responsividade para tamanhos de tela diferente */
+        @media screen and (max-width: 500px) {
+            .menu li {
+            display: block;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="container">
+        <h1>Portfólio Pessoal</h1>
+    </header>
+
+    <nav class="container menu">
+        <ul>
+            <li class="link"><a class="visit" href="sobre.html" target="_self">Sobre mim</a></li>
+            <li class="link"><a class="visit" href="portf.html" target="_self">Portfólio</a></li>
+            <li class="link"><a class="visit" href="form.html" target="_self">Formação</a></li>
+            <li class="link"><a class="visit" href="cont.html" target="_self">Contato</a></li>
+        </ul>
+    </nav>
+
+    <footer class="container rodape">
+        <p>Site desenvolvido por <strong>Filipe Araujo Silva</strong> ©️</p>
+    </footer>
+</body>
+</html>      
